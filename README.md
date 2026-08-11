@@ -1,84 +1,93 @@
-# ⚡ Nexus AI Analytics & Command Center Hub
+# 📈 FinSight — AI-Powered Financial Research & Risk Analytics Platform
 
-> State-of-the-art AI Analytics, Model Benchmarking, and Autonomous Subagent Monitoring Command Center built with **React**, **Vite**, **Vanilla CSS Glassmorphism**, and **Lucide Icons**.
-
----
-
-## 🌟 Key Features
-
-* 📊 **Real-time Telemetry & KPI Cards**: Track total token throughput, time-to-first-token (TTFT) latency, active model instances, and estimated API costs with dynamic SVG sparkline charts.
-* 🤖 **AI Model Benchmark Matrix**: Compare evaluation scores, context window limits, token generation speeds (`tok/s`), and cost metrics across **Gemini 3.6 Flash (High)**, **Gemini 3.6 Pro**, **Gemini Flash Lite**, and **Gemini Ultra**.
-* ⚡ **Live Prompt & Token Simulator**: Emulate real-time LLM token streaming with adjustable temperature, token generation speed counters, and an auto-scrolling terminal display.
-* 🛰️ **Autonomous Subagents Monitor**: Track background subagents executing concurrent research, edge-case test generation, and code profiling with progress bars and terminal logs.
-* 🎨 **Dark Glassmorphism Design System**: Built with modern typography (`Outfit`, `Inter`, `JetBrains Mono`), vibrant HSL gradients, high-contrast glass backdrop filters, and smooth micro-animations.
+> Production-grade quantitative finance, machine learning, financial RAG intelligence, and risk analytics platform built with **FastAPI**, **PostgreSQL**, **scikit-learn**, **React**, and **Docker**.
 
 ---
 
-## 🏗️ Tech Stack
-
-* **Frontend Library**: [React 18](https://react.dev/)
-* **Build Tool**: [Vite](https://vitejs.dev/)
-* **Styling**: Vanilla CSS (Custom Design System with Variables & Glassmorphism)
-* **Iconography**: [Lucide React](https://lucide.dev/)
-* **Fonts**: Google Fonts (`Outfit`, `Inter`, `JetBrains Mono`)
+### ⚠️ Educational Disclaimer
+**FinSight is built strictly for quantitative research and educational purposes. It does not provide personalized investment, financial, tax, or legal advice. All analytics, derivatives calculations, risk estimates, and machine learning models are theoretical representations.**
 
 ---
 
-## 🚀 Quick Start
+## 🌟 Architecture & Key Features
 
-### Prerequisites
-* **Node.js** (v18.0.0 or higher)
-* **npm** (v9.0.0 or higher)
-
-### Installation & Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/samadritowork-cyber/antigravity123.git
-   cd antigravity123
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-   Open your browser and navigate to `http://localhost:3000/`.
-
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
+* 📊 **Quantitative Market Analytics**: Daily/annualized returns, volatility, Sharpe ratio, Sortino ratio, Beta, Max Drawdown, Parametric & Historical Value at Risk (VaR).
+* 💼 **Portfolio Risk & Attribution Engine**: Asset risk contribution (Marginal Contribution to Risk - MCR), concentration risk (HHI), correlation matrices, and portfolio VaR.
+* 📈 **Derivatives & Options Analytics**: Analytical Black-Scholes pricing engine & complete Greeks suite ($\Delta, \Gamma, \mathcal{V}, \Theta, \rho$).
+* 🤖 **Defensible Machine Learning Pipeline**: 
+  - Model comparison across **Statistical Baseline**, **Supervised Classifier**, and **Unsupervised GMM Regime Detector**.
+  - Strict **time-series validation** with purging/embargoing to guarantee zero look-ahead bias and data leakage.
+* 🧠 **Modular RAG Intelligence Assistant**: Grounded financial Q&A over financial reports and news with explicit source citations and metadata preservation.
+* 🛡️ **Abstract Data Ingestion Layer**: Provider abstraction layer decoupling market analytics from vendor APIs (`AbstractMarketDataProvider` -> `YFinanceProvider`).
+* 🔐 **Secure Backend API Proxy**: Zero client-side API key leakage; all external models and LLM integrations are proxied backend-side via FastAPI.
 
 ---
 
-## 📁 Project Architecture
+## 🏗️ Repository Architecture
 
 ```
 antigravity123/
-├── index.html              # HTML5 entry with Google Fonts & SEO metadata
-├── package.json            # Project dependencies and npm scripts
-├── vite.config.js          # Vite server configuration (Port 3000)
-├── src/
-│   ├── main.jsx            # React root mount entry point
-│   ├── App.jsx             # Shell container managing active tabs & global telemetry
-│   ├── index.css           # Glassmorphism design tokens & global CSS styles
-│   └── components/
-│       ├── Sidebar.jsx     # Navigation sidebar & active lease status
-│       ├── Header.jsx      # Top bar search input & telemetry refresh action
-│       ├── KpiCards.jsx    # Metric cards with SVG sparkline trends
-│       ├── ModelComparison.jsx # Benchmark comparison matrix table
-│       ├── PromptSimulator.jsx # Real-time token streaming playground & terminal
-│       └── AgentMonitor.jsx  # Background subagent task timeline tracker
+├── backend/            # FastAPI application & core configuration
+│   └── app/
+│       ├── api/        # REST API Endpoints
+│       ├── core/       # Settings, Logging, Disclaimer
+│       └── main.py     # FastAPI application entrypoint
+├── data/               # Market Data Provider Abstraction Layer
+│   └── providers/      # AbstractMarketDataProvider & YFinanceProvider
+├── finance/            # Quantitative Financial Engine
+├── ml/                 # Machine Learning Pipeline & Time-Series Validation
+├── rag/                # Modular Financial RAG System
+├── frontend/           # React 18 + Vite Analytics UI
+├── tests/              # Pytest Suite
+├── docs/               # Comprehensive System Documentation
+├── requirements.txt    # Python production dependencies
+├── .env.example        # Configuration template
 └── README.md
 ```
 
 ---
 
-## 📄 License
+## 🚀 Quick Start (Development)
 
-This project is licensed under the [MIT License](LICENSE).
+### Prerequisites
+* Python 3.10+
+* Node.js v18+ & npm
+
+### Setup
+1. **Clone repository & enter environment:**
+   ```bash
+   git clone https://github.com/samadritowork-cyber/antigravity123.git
+   cd antigravity123
+   ```
+2. **Install Python dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run unit tests:**
+   ```bash
+   pytest
+   ```
+4. **Start FastAPI backend:**
+   ```bash
+   python -m backend.app.main
+   ```
+   Backend interactive API docs will be available at `http://localhost:8000/docs`.
+
+---
+
+## 🗺️ Milestone Plan Status
+- [x] **Milestone 1:** Repository Reorganization, Data Provider Abstraction, Logging, Config & Disclaimer.
+- [ ] **Milestone 2:** Market Data Ingestion Pipeline & PostgreSQL Schema.
+- [ ] **Milestone 3:** Core Financial Analytics Engine.
+- [ ] **Milestone 4:** Portfolio Risk & Risk Contribution Engine.
+- [ ] **Milestone 5:** Options & Derivatives Analytics.
+- [ ] **Milestone 6:** ML Feature Engineering & Leakage-Free Validation.
+- [ ] **Milestone 7:** ML Market Regime Classification & Volatility Forecasting Models.
+- [ ] **Milestone 8:** FastAPI Production Backend Endpoints.
+- [ ] **Milestone 9:** Modular Financial RAG Engine.
+- [ ] **Milestone 10:** Analytical Frontend Dashboard.
+- [ ] **Milestone 11:** Multi-Container Dockerization.
+- [ ] **Milestone 12:** Full Test Suite & GitHub Actions CI/CD.
+- [ ] **Milestone 13:** AWS Cloud Deployment Infrastructure.
+- [ ] **Milestone 14:** Production Hardening & System Monitoring.
+- [ ] **Milestone 15:** Documentation & Portfolio Presentation.
